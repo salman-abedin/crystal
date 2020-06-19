@@ -7,9 +7,6 @@ top_padding=35
 hidden_windows=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
 mode="$hidden_windows"_mode
 
-# Statasbar Launching
-launch_bar() { $STATUS_BAR & }
-
 hide_nodes() {
     xdo id -rd | tee "$hidden_windows"
     [ -s "$hidden_windows" ] && cat "$hidden_windows" | xargs xdo hide
@@ -20,13 +17,14 @@ unhide_nodes() {
     : > "$hidden_windows"
 }
 
+# BSPWM Specific settings
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 
 case $1 in
 
     --navigate)
-        # Regular navigations (Put your window manager navigatiosn here)
+        # Regular navigations (Put your window managers navigations here)
         if [ "$2" = "next" ]; then
             bspc node -f next.local && exit 0
         else
