@@ -24,6 +24,8 @@ No more ugly windows behind your beautiful transparent one
 
 ## Usage
 
+- This is shellscript, so do the typical drill (chmod, move to path)
+
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
 crystal --navigate [next,prev]         # navigate to next/prev hidden windows
