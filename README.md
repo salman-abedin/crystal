@@ -20,7 +20,7 @@ No more ugly windows behind your beautiful transparent one
 
 # Prerequisites
 
-- Get the **WM_NAME** of your status bar using **xprop** and change the STATUS_BAR variable in the script accordingly
+- Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
 
 # Usage
 
