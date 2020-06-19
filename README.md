@@ -1,6 +1,6 @@
 ![](demo/preview.gif)
 
-# WM agnostic clear transparent workflow for Unix
+# Window manager agnostic clear transparent workflow for Unix
 
 No more ugly windows behind your beautiful transparent one
 
@@ -37,11 +37,12 @@ crystal --close                        # closes current window and focuses on th
 [Bolt](https://github.com/salman-abedin/bolt)
 : The lightning fast workflow creator
 
-[Crystal](https://github.com/salman-abedin/crystal)
-: The transparent desktop setup
-
 [Uniblocks](https://github.com/salman-abedin/uniblocks)
 : The statusbar
 
 [Magpie](https://github.com/salman-abedin/magpie)
 : The dotfiles
+
+## Contact
+
+SalmanAbedin@disroot.org
