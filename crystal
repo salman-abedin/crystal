@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Status Bar
-[ "$STATUS_BAR" ] || export STATUS_BAR=yabaar
+[ "$STATUS_BAR" ] || export STATUS_BAR=polybar
 # BSPWM Padding
 top_padding=35
 hidden_windows=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
