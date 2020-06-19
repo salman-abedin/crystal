@@ -32,10 +32,6 @@ crystal --close                        # closes current window and unhides the p
 
 # FAQ
 
-### I don't use yabar!
-
-Change the **STATUS_BAR** variable on top of the script.
-
 ### Your status bar looks cool! What's that!
 
 ![Uniblocks](https://github.com/salman-abedin/uniblocks)
