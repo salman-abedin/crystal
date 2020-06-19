@@ -32,20 +32,12 @@ crystal --navigate [next,prev]         # navigate to next/prev hidden windows
 crystal --close                        # closes current window and focuses on the previous one
 ```
 
-## FAQ
+## Other Projects
 
-### Your status bar looks cool! What's that!
+[Uniblocks](https://github.com/salman-abedin/uniblocks)
 
-![Uniblocks](https://github.com/salman-abedin/uniblocks)
+[Bolt](https://github.com/salman-abedin/bolt)
 
-### How are you launching those files and folders so fast!
-
-![Bolt](https://github.com/salman-abedin/bolt)
-
-### What is this sorcery of a system!
-
-![Magpie](https://github.com/salman-abedin/magpie)
-
-### You are so jazz! Where can I reach you!
+## Contact
 
 SalmanAbedin@disroot.org

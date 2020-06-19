@@ -38,18 +38,18 @@ case $1 in
 
         # This is where the fun begins
 
-        currentWindow=$(xdo id)
+        current_window=$(xdo id)
         xdo hide
 
         if [ "$2" = "next" ]; then
             tail -1 "$hidden_windows" | xargs xdo show
             sed -i '$d' "$hidden_windows"
-            printf "%s\n%s" "$currentWindow" "$(cat "$hidden_windows")" > "$hidden_windows"
-            # sed -i "1i$currentWindow" "$hidden_windows"
+            printf "%s\n%s" "$current_window" "$(cat "$hidden_windows")" > "$hidden_windows"
+            # sed -i "1i$current_window" "$hidden_windows"
         else
             head -1 "$hidden_windows" | xargs xdo show
             sed -i '1d' "$hidden_windows"
-            echo "$currentWindow" >> "$hidden_windows"
+            echo "$current_window" >> "$hidden_windows"
         fi
         ;;
 
