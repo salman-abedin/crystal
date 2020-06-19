@@ -59,7 +59,7 @@ case $1 in
             : > "$mode"
             unhide_nodes
             if [ "$2" = "fullscreen" ]; then
-                xdo show -a yabar
+                xdo show -a $STATUS_BAR
                 bspc desktop -l tiled
                 bspc config top_padding $top_padding
             fi
@@ -67,7 +67,7 @@ case $1 in
             echo mono > "$mode"
             hide_nodes
             if [ "$2" = "fullscreen" ]; then
-                xdo hide -a yabar
+                xdo hide -a $STATUS_BAR
                 bspc desktop -l monocle
                 bspc config top_padding 0
             fi
