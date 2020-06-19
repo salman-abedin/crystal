@@ -14,9 +14,9 @@ No more ugly windows behind your beautiful transparent one
 
 ## Dependencies
 
--  A compositor(duh!)
--  xdo
--  wmctrl
+-  A **Compositor**(duh!)
+-  **xdo**
+-  **wmctrl**
 
 ## Prerequisites
 
