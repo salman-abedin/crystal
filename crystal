@@ -3,7 +3,7 @@
 # Status Bar
 [ "$STATUS_BAR" ] || export STATUS_BAR=yabaar
 # BSPWM Padding
-top_padding=0
+top_padding=35
 hidden_windows=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
 mode="$hidden_windows"_mode
 
