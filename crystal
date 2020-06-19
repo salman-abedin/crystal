@@ -3,10 +3,9 @@
 # Status Bar
 [ "$STATUS_BAR" ] || export STATUS_BAR=yabaar
 # BSPWM Padding
-top_padding=35
+top_padding=0
 hidden_windows=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
-mode="$hidden_windows"_mono
-mode=/tmp/fullscreen
+mode="$hidden_windows"_mode
 
 # Statasbar Launching
 launch_bar() { $STATUS_BAR & }
@@ -27,11 +26,12 @@ bspc config gapless_monocle true
 case $1 in
 
     --navigate)
-        # Regular navigations
+        # Regular navigations (Put your window manager navigatiosn here)
         if [ "$2" = "next" ]; then
-            bspc node -f next.local && exit 1
+            bspc node -f next.local && exit 0
         else
-            bspc node -f prev.local && exit 1
+            bspc node -f prev.local && exit 0
+            # xdo id -rd | head -1 | xargs xdo activate && exit 0
         fi
 
         # Edge cases

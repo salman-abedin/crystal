@@ -1,6 +1,6 @@
 ![](demo/preview.gif)
 
-# WM agnostic clear transparent workflow
+# WM agnostic clear transparent workflow for Unix
 
 No more ugly windows behind your beautiful transparent one
 
@@ -20,14 +20,14 @@ No more ugly windows behind your beautiful transparent one
 
 # Prerequisites
 
-- Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
+-  Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
 
 # Usage
 
 ```sh
-crystal --toggle [monocle,fullscreen]  # toggle clear monocle
-crystal --navigate [next,prev]         # navigate to next/prev hidden window
-crystal --close                        # closes current window and unhides the previous one
+crystal --toggle [monocle,fullscreen]  # toggle crystal mode
+crystal --navigate [next,prev]         # navigate to next/prev hidden windows
+crystal --close                        # closes current window and focuses on the previous one
 ```
 
 # FAQ
