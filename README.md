@@ -4,7 +4,7 @@
 
 No more ugly windows behind your beautiful transparent one
 
-# Features
+## Features
 
 -  Can be used on any window manager
 -  No background windows on fullscreen mode
@@ -12,17 +12,17 @@ No more ugly windows behind your beautiful transparent one
 -  Navigation between hidden windows
 -  Auto navigate to previews hidden window after closing
 
-# Dependencies
+## Dependencies
 
 -  A compositor(duh!)
 -  xdo
 -  wmctrl
 
-# Prerequisites
+## Prerequisites
 
 -  Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
 
-# Usage
+## Usage
 
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
@@ -30,7 +30,7 @@ crystal --navigate [next,prev]         # navigate to next/prev hidden windows
 crystal --close                        # closes current window and focuses on the previous one
 ```
 
-# FAQ
+## FAQ
 
 ### Your status bar looks cool! What's that!
 
