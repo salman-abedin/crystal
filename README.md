@@ -1,4 +1,4 @@
-![](preview/preview.gif)
+![](demo/preview.gif)
 
 # WM agnostic clear transparent workflow
 
