@@ -56,7 +56,7 @@ case $1 in
         ;;
 
     --toggle)
-        xdo id || exit 1
+        # xdo id || exit 1
         if [ -s "$mode" ]; then
             : > "$mode"
             unhide_nodes
