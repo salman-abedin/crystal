@@ -21,9 +21,7 @@ No more ugly windows behind your beautiful transparent one
 ## Prerequisites
 
 Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUS_BAR** accordingly. For example, put this in your **.profile/.xprofile** if you are using polybar
-    ```sh
-    export STATUS_BAR=polybar
-    ```
+`sh export STATUS_BAR=polybar`
 
 ## Installation
 
