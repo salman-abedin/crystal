@@ -60,7 +60,14 @@ case $1 in
 
     --close)
         xdo close
-        [ -s "$mode" ] && xdo id -rd && xdo id -rd | head -1 | xargs xdo show
+        if [ -s "$mode" ]; then
+            if xdo id -rd; then
+                xdo id -rd | head -1 | xargs xdo show
+            else
+                xdo show -a $STATUS_BAR
+                bspc config top_padding $top_padding
+            fi
+        fi
         ;;
     *) : ;;
 
