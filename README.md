@@ -22,6 +22,13 @@ No more ugly windows behind your beautiful transparent one
 
 -  Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
 
+## Installation
+
+```sh
+git clone git@github.com:salman-abedin/crystal.git
+sudo make install
+```
+
 ## Usage
 
 - This is shellscript, so do the typical drill (chmod, move to path)
@@ -30,6 +37,12 @@ No more ugly windows behind your beautiful transparent one
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
 crystal --navigate [next,prev]         # navigate to next/prev hidden windows
 crystal --close                        # closes current window and focuses on the previous one
+```
+
+## Uninstallation
+
+```sh
+sudo make uninstall
 ```
 
 ## Other Projects
