@@ -18,10 +18,6 @@ No more ugly windows behind your beautiful transparent one
 -  **xdo**
 -  **wmctrl**
 
-## Prerequisites
-
--  Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
-
 ## Installation
 
 ```sh
@@ -30,6 +26,8 @@ sudo make install
 ```
 
 ## Usage
+
+-  Get the **WM_NAME** of your status bar using **xprop** and change the **STATUS_BAR** variable in the script accordingly
 
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
