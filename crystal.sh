@@ -54,7 +54,6 @@ case $1 in
             tail -1 "$hidden_windows" | xargs xdo show
             sed -i '$d' "$hidden_windows"
             printf "%s\n%s" "$current_window" "$(cat "$hidden_windows")" > "$hidden_windows"
-            # sed -i "1i$current_window" "$hidden_windows"
         else
             head -1 "$hidden_windows" | xargs xdo show
             sed -i '1d' "$hidden_windows"
