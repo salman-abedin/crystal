@@ -36,8 +36,8 @@ sudo make install
 
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
-crystal --navigate [next,prev]         # navigate to next/prev hidden windows
-crystal --close                        # closes current window and focuses on the previous one
+crystal --navigate [next,prev]         # navigate between hidden windows
+crystal --close                        # closes the current window and focuses on the previous one
 ```
 
 ## Uninstallation
@@ -45,6 +45,11 @@ crystal --close                        # closes current window and focuses on th
 ```sh
 sudo make uninstall
 ```
+
+## FAQ
+
+### What if I change my bar?
+Just change the environment variable
 
 ## Other Projects
 
