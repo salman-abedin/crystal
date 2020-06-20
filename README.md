@@ -48,7 +48,7 @@ sudo make uninstall
 
 ## FAQ
 
-### What if I change my bar?
+### What if I change my status bar?
 Just change the environment variable
 
 ## Other Projects
