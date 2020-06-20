@@ -28,7 +28,7 @@ No more ugly windows behind your beautiful transparent one
 ## Installation
 
 ```sh
-git clone https://github.com/salman-abedin/crystal.git && cd crystal sudo make install
+git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo make install
 ```
 
 ## Usage
