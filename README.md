@@ -33,6 +33,8 @@ git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo mak
 
 ## Usage
 
+- Bind these commands to your preferred key combinations
+
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
 crystal --navigate [next,prev]         # navigate between hidden windows
