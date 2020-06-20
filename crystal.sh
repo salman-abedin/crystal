@@ -33,6 +33,7 @@ unhide_nodes() {
 case $1 in
 
     --navigate)
+
         # Regular navigations (Put your window managers navigations here)
         if [ "$2" = "next" ]; then
             bspc node -f next.local && exit 0
