@@ -31,8 +31,6 @@ sudo make install
 
 ## Usage
 
-- This is shellscript, so do the typical drill (chmod, move to path)
-
 ```sh
 crystal --toggle [monocle,fullscreen]  # toggle crystal mode
 crystal --navigate [next,prev]         # navigate to next/prev hidden windows
