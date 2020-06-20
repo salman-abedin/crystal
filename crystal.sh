@@ -1,16 +1,19 @@
 #!/usr/bin/env sh
 
 ###############################################################################
-#                             Config 
+#                             Config
 ###############################################################################
 
 # Status Bar
 [ "$STATUS_BAR" ] || export STATUS_BAR=polybar
-# BSPWM Padding
+
+# BSPWM Specific settings
 top_padding=35
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
 ###############################################################################
-#                             Script 
+#                             Script
 ###############################################################################
 
 hidden_windows=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
@@ -26,9 +29,6 @@ unhide_nodes() {
     : > "$hidden_windows"
 }
 
-# BSPWM Specific settings
-bspc config borderless_monocle true
-bspc config gapless_monocle true
 
 case $1 in
 
@@ -63,25 +63,23 @@ case $1 in
         ;;
 
     --toggle)
-        # xdo id || exit 1
         if [ -s "$mode" ]; then
             : > "$mode"
             unhide_nodes
+            bspc desktop -l tiled
             if [ "$2" = "fullscreen" ]; then
                 xdo show -a $STATUS_BAR
-                bspc desktop -l tiled
                 bspc config top_padding $top_padding
             fi
         else
             echo mono > "$mode"
             hide_nodes
+            bspc desktop -l monocle
             if [ "$2" = "fullscreen" ]; then
                 xdo hide -a $STATUS_BAR
-                bspc desktop -l monocle
                 bspc config top_padding 0
             fi
         fi
-        [ "$2" = "monocle" ] && bspc desktop -l next
         bspc node -f prev.local
         bspc node -n biggest.local
         ;;

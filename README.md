@@ -49,7 +49,8 @@ sudo make uninstall
 ## FAQ
 
 ### What if I change my status bar?
-Just change the environment variable
+
+Change the **STATUS_BAR** environment variable and you are good to go.
 
 ## Other Projects
 
