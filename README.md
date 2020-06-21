@@ -14,7 +14,8 @@ No more ugly windows behind your beautiful transparent one
 
 ## Dependencies
 
--  A **Compositor**(duh!)
+-  head, tail, xargs
+-  A compositor( ex. **xcompmgr, picom** etc )
 -  **xdo**
 -  **wmctrl**
 
