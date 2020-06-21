@@ -69,3 +69,4 @@ Change the **STATUS_BAR** environment variable and you are good to go.
 ## Contact
 
 SalmanAbedin@disroot.org
+
