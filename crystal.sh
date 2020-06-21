@@ -22,7 +22,7 @@ case $1 in
 
     --navigate)
         if [ "$2" = "next" ]; then
-            window=$(xdo id -rd | head -1)
+            window=$(xdo id -rd | tail -1)
         else
             # todo: previous window
             window=$(xdo id -rd | head -1)
@@ -54,7 +54,8 @@ case $1 in
                 bspc config top_padding 0
             fi
         fi
-        bspc node -f prev.local
+        xdo id -rd | head -1 | xargs xdo activate
+        # bspc node -f prev.local
         bspc node -n biggest.local
         ;;
 
@@ -70,5 +71,4 @@ case $1 in
         fi
         ;;
     *) : ;;
-
 esac
