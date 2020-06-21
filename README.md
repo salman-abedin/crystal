@@ -62,11 +62,9 @@ Change the **STATUS_BAR** environment variable and you are good to go.
 [Magpie](https://github.com/salman-abedin/magpie)
 : The dotfiles
 
-
 [Alfred](https://github.com/salman-abedin/alfred)
 : The scripts
 
 ## Contact
 
 SalmanAbedin@disroot.org
-
