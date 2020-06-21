@@ -5,7 +5,7 @@
 ###############################################################################
 
 # Status Bar
-[ "$STATUS_BAR" ] || export STATUS_BAR=polybar
+[ "$STATUSBAR" ] || export STATUSBAR=polybar
 
 # BSPWM Specific settings
 top_padding=35
@@ -42,7 +42,7 @@ case $1 in
             xdo id -rd && xdo id -rd | xargs xdo show
             bspc desktop -l tiled
             if [ "$2" = "fullscreen" ]; then
-                xdo show -a $STATUS_BAR
+                xdo show -a $STATUSBAR
                 bspc config top_padding $top_padding
             fi
         else
@@ -50,7 +50,7 @@ case $1 in
             xdo id -rd && xdo id -rd | xargs xdo hide
             bspc desktop -l monocle
             if [ "$2" = "fullscreen" ]; then
-                xdo hide -a $STATUS_BAR
+                xdo hide -a $STATUSBAR
                 bspc config top_padding 0
             fi
         fi
@@ -64,7 +64,7 @@ case $1 in
             if xdo id -rd; then
                 xdo id -rd | head -1 | xargs xdo show
             else
-                xdo show -a $STATUS_BAR
+                xdo show -a $STATUSBAR
                 bspc config top_padding $top_padding
             fi
         fi
