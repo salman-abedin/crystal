@@ -65,6 +65,9 @@ Change the **STATUS_BAR** environment variable and you are good to go.
 [Alfred](https://github.com/salman-abedin/alfred)
 : The scripts
 
+[Devour](https://github.com/salman-abedin/devour)
+: Terminal swallowing
+
 ## Contact
 
 SalmanAbedin@disroot.org
