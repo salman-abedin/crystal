@@ -22,14 +22,6 @@ This is the next iteration of
 -  [xdo](https://github.com/baskerville/xdo)
 -  **wmctrl**
 
-## Prerequisites
-
-Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using polybar
-
-```sh
-export STATUSBAR=polybar
-```
-
 ## Installation
 
 ```sh
@@ -38,7 +30,14 @@ git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo mak
 
 ## Usage
 
-Bind these commands to your preferred key combinations
+-  Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using polybar
+
+```sh
+export STATUSBAR=polybar
+```
+-  Restart
+
+-  Bind these commands to your preferred key combinations
 
 ```sh
 crystal --toggle [solo,fullscreen]  # toggle crystal mode
