@@ -27,7 +27,7 @@ solo() {
             bspc desktop -l monocle
             ;;
         off)
-            sed -i 's/solo//' "$WORKSPACE"
+            sed -i '/solo/d' "$WORKSPACE"
             xdo id -rd && xdo id -rd | xargs xdo show
             bspc desktop -l tiled
             ;;
@@ -71,7 +71,7 @@ case $1 in
                 ;;
             fullscreen)
                 if grep fullscreen "$WORKSPACE"; then
-                    sed -i 's/fullscreen//' "$WORKSPACE"
+                    sed -i '/fullscreen/d' "$WORKSPACE"
                     xdo show -a $STATUSBAR
                     solo off
                     bspc config top_padding $top_padding
