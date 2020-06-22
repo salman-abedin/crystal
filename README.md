@@ -19,13 +19,16 @@ This is the next iteration of
 
 -  head, tail, xargs, shift
 -  A compositor( ex. **xcompmgr, picom** etc )
--  **xdo**
+-  [xdo](https://github.com/baskerville/xdo)
 -  **wmctrl**
 
 ## Prerequisites
 
-Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put this in your **.profile/.xprofile** if you are using polybar
-`sh export STATUSBAR=polybar`
+Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using polybar
+
+```sh
+export STATUSBAR=polybar
+```
 
 ## Installation
 

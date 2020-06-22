@@ -16,7 +16,8 @@ bspc config gapless_monocle true
 #                             Script
 ###############################################################################
 
-WORKSPACE=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
+# WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
+WORKSPACE=/tmp/crystal_ws$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
 
 solo() {
     case $1 in
