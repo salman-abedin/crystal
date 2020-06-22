@@ -21,8 +21,8 @@ No more ugly windows behind your beautiful transparent one
 
 ## Prerequisites
 
-Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUS_BAR** accordingly. For example, put this in your **.profile/.xprofile** if you are using polybar
-`sh export STATUS_BAR=polybar`
+Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put this in your **.profile/.xprofile** if you are using polybar
+`sh export STATUSBAR=polybar`
 
 ## Installation
 
@@ -35,9 +35,9 @@ git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo mak
 Bind these commands to your preferred key combinations
 
 ```sh
-crystal --toggle [monocle,fullscreen]  # toggle crystal mode
-crystal --navigate [next,prev]         # navigate between hidden windows
-crystal --close                        # closes the current window and focuses on the previous one
+crystal --toggle [solo,fullscreen]  # toggle crystal mode
+crystal --navigate [next,prev]      # navigate between hidden windows
+crystal --close                     # closes the current window and focuses on the previous one
 ```
 
 ## Uninstallation
