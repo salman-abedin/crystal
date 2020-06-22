@@ -16,30 +16,29 @@ bspc config gapless_monocle true
 #                             Script
 ###############################################################################
 
-MODE=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
-dir=/tmp/"$MODE"_prev
+SOLO=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
+NEXT=/tmp/next
 
 case $1 in
-
     --navigate)
+        window=$(xdo id -rd | head -1)
         if [ "$2" = "next" ]; then
-            window=$(xdo id -rd | tail -1)
+            [ ! -s "$NEXT" ] && echo true > "$NEXT" && window=$(xdo id -rd | tail -1) && ns "Turend Next"
+            # :
         else
-            window=$(xdo id -rd | head -1)
+            [ -s "$NEXT" ] && echo : > "$NEXT" && window=$(xdo id -rd | tail -1) && ns "Turend Previous"
+            # :
         fi
-
-        if [ -s "$MODE" ] && xdo id -rd; then
+        if [ -s "$SOLO" ] && xdo id -rd; then
             xdo hide
             xdo show "$window"
         else
             xdo activate "$window"
         fi
-
         ;;
-
     --toggle)
-        if [ -s "$MODE" ]; then
-            : > "$MODE"
+        if [ -s "$SOLO" ]; then
+            : > "$SOLO"
             xdo id -rd && xdo id -rd | xargs xdo show
             bspc desktop -l tiled
             if [ "$2" = "fullscreen" ]; then
@@ -47,7 +46,7 @@ case $1 in
                 bspc config top_padding $top_padding
             fi
         else
-            echo mono > "$MODE"
+            echo true > "$SOLO"
             xdo id -rd && xdo id -rd | xargs xdo hide
             bspc desktop -l monocle
             if [ "$2" = "fullscreen" ]; then
@@ -62,7 +61,7 @@ case $1 in
 
     --close)
         xdo close
-        if [ -s "$MODE" ]; then
+        if [ -s "$SOLO" ]; then
             if xdo id -rd; then
                 xdo id -rd | head -1 | xargs xdo show
             else
