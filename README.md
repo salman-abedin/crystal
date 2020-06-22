@@ -14,7 +14,7 @@ No more ugly windows behind your beautiful transparent one
 
 ## Dependencies
 
--  head, tail, xargs
+-  head, tail, xargs, shift
 -  A compositor( ex. **xcompmgr, picom** etc )
 -  **xdo**
 -  **wmctrl**
