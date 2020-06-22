@@ -40,29 +40,38 @@ while :; do
             fi
             ;;
         --toggle)
-            if grep solo "$WORKSPACE"; then
-                sed -i 's/solo//' "$WORKSPACE"
-                xdo id -rd && xdo id -rd | xargs xdo show
-                bspc desktop -l tiled
-                if [ "$2" = "fullscreen" ]; then
-                    xdo show -a $STATUSBAR
-                    bspc config top_padding $top_padding
-                fi
-            else
-                echo solo >> "$WORKSPACE"
-                xdo id -rd && xdo id -rd | xargs xdo hide
-                bspc desktop -l monocle
-                if [ "$2" = "fullscreen" ]; then
-                    xdo hide -a $STATUSBAR
-                    bspc config top_padding 0
-                fi
-            fi
+            shift
+            case $1 in
+                solo)
+                    shift
+                    if grep solo "$WORKSPACE" || [ "$1" = off ]; then
+                        sed -i 's/solo//' "$WORKSPACE"
+                        xdo id -rd && xdo id -rd | xargs xdo show
+                        bspc desktop -l tiled
+                    else
+                        echo solo >> "$WORKSPACE"
+                        xdo id -rd && xdo id -rd | xargs xdo hide
+                        bspc desktop -l monocle
+                    fi
+                    ;;
+                fullscreen)
+                    $0 --toggle solo
+                    if grep fullscreen "$WORKSPACE"; then
+                        sed -i 's/fullscreen//' "$WORKSPACE"
+                        xdo show -a $STATUSBAR
+                        bspc config top_padding $top_padding
+                    else
+                        echo fullscreen >> "$WORKSPACE"
+                        xdo hide -a $STATUSBAR
+                        bspc config top_padding 0
+                    fi
+                    ;;
+            esac
             # $0 --navigate prev
             xdo id -rd | head -1 | xargs xdo activate
             # bspc node -f prev.local
             bspc node -n biggest.local
             ;;
-
         --close)
             xdo close
             if grep solo "$WORKSPACE"; then

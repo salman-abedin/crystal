@@ -4,6 +4,9 @@
 
 No more ugly windows behind your beautiful transparent one
 
+This is the next iteration of
+[Mono Trans BSPWM](https://github.com/salman-abedin/mono_trans_bspwm)
+
 ## Features
 
 -  Can be used on any window manager
