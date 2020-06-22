@@ -16,59 +16,65 @@ bspc config gapless_monocle true
 #                             Script
 ###############################################################################
 
-SOLO=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
-NEXT=/tmp/next
+WORKSPACE=/tmp/crystal_0$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
 
-case $1 in
-    --navigate)
-        window=$(xdo id -rd | head -1)
-        if [ "$2" = "next" ]; then
-            [ ! -s "$NEXT" ] && echo true > "$NEXT" && window=$(xdo id -rd | tail -1) && ns "Turend Next"
-            # :
-        else
-            [ -s "$NEXT" ] && echo : > "$NEXT" && window=$(xdo id -rd | tail -1) && ns "Turend Previous"
-            # :
-        fi
-        if [ -s "$SOLO" ] && xdo id -rd; then
-            xdo hide
-            xdo show "$window"
-        else
-            xdo activate "$window"
-        fi
-        ;;
-    --toggle)
-        if [ -s "$SOLO" ]; then
-            : > "$SOLO"
-            xdo id -rd && xdo id -rd | xargs xdo show
-            bspc desktop -l tiled
-            if [ "$2" = "fullscreen" ]; then
-                xdo show -a $STATUSBAR
-                bspc config top_padding $top_padding
-            fi
-        else
-            echo true > "$SOLO"
-            xdo id -rd && xdo id -rd | xargs xdo hide
-            bspc desktop -l monocle
-            if [ "$2" = "fullscreen" ]; then
-                xdo hide -a $STATUSBAR
-                bspc config top_padding 0
-            fi
-        fi
-        xdo id -rd | head -1 | xargs xdo activate
-        # bspc node -f prev.local
-        bspc node -n biggest.local
-        ;;
+while :; do
+    case $1 in
+        --navigate)
+            shift
+            # window=$(xdo id -rd | head -1)
+            if [ "$1" = "next" ]; then
+                window=$(xdo id -rd | tail -1)
+                # ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
 
-    --close)
-        xdo close
-        if [ -s "$SOLO" ]; then
-            if xdo id -rd; then
-                xdo id -rd | head -1 | xargs xdo show
             else
-                xdo show -a $STATUSBAR
-                bspc config top_padding $top_padding
+                window=$(xdo id -rd | head -1)
+                # grep next "$WORKSPACE" && sed -i 's/next//' "$WORKSPACE" && window=$(xdo id -rd | tail -1)
+
             fi
-        fi
-        ;;
-    *) : ;;
-esac
+            if grep solo "$WORKSPACE" && xdo id -rd; then
+                xdo hide
+                xdo show "$window"
+            else
+                xdo activate "$window"
+            fi
+            ;;
+        --toggle)
+            if grep solo "$WORKSPACE"; then
+                sed -i 's/solo//' "$WORKSPACE"
+                xdo id -rd && xdo id -rd | xargs xdo show
+                bspc desktop -l tiled
+                if [ "$2" = "fullscreen" ]; then
+                    xdo show -a $STATUSBAR
+                    bspc config top_padding $top_padding
+                fi
+            else
+                echo solo >> "$WORKSPACE"
+                xdo id -rd && xdo id -rd | xargs xdo hide
+                bspc desktop -l monocle
+                if [ "$2" = "fullscreen" ]; then
+                    xdo hide -a $STATUSBAR
+                    bspc config top_padding 0
+                fi
+            fi
+            # $0 --navigate prev
+            xdo id -rd | head -1 | xargs xdo activate
+            # bspc node -f prev.local
+            bspc node -n biggest.local
+            ;;
+
+        --close)
+            xdo close
+            if grep solo "$WORKSPACE"; then
+                if xdo id -rd; then
+                    xdo id -rd | head -1 | xargs xdo show
+                else
+                    xdo show -a $STATUSBAR
+                    bspc config top_padding $top_padding
+                fi
+            fi
+            ;;
+        *) : ;;
+    esac
+    shift
+done
