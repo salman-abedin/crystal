@@ -57,7 +57,7 @@ sudo make uninstall
 
 Change the **STATUSBAR** environment variable and you are good to go.
 
-## Other Projects
+## Repos you might be interested in
 
 [Bolt](https://github.com/salman-abedin/bolt)
 : The lightning fast workflow creator
