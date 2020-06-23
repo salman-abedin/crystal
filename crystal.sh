@@ -69,12 +69,12 @@ case $1 in
             fullscreen)
                 if grep fullscreen "$WORKSPACE"; then
                     sed -i '/fullscreen/d' "$WORKSPACE"
-                    xdo show -a $STATUSBAR
+                    xdo show -a "$STATUSBAR"
                     solo off
                     bspc config top_padding $top_padding
                 else
                     echo fullscreen >> "$WORKSPACE"
-                    xdo hide -a $STATUSBAR
+                    xdo hide -a "$STATUSBAR"
                     solo on
                     bspc config top_padding 0
                 fi
@@ -87,7 +87,7 @@ case $1 in
             if xdo id -rd; then
                 xdo id -rd | head -1 | xargs xdo show
             else
-                xdo show -a $STATUSBAR
+                xdo show -a "$STATUSBAR"
                 bspc config top_padding $top_padding
             fi
         fi
