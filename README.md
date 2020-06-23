@@ -39,11 +39,11 @@ export STATUSBAR=polybar
 
 -  Bind these commands to your preferred key combinations
 
-```sh
-crystal --toggle [solo,fullscreen]  # toggle crystal mode
-crystal --navigate [next,prev]      # navigate between hidden windows
-crystal --close                     # closes the current window and focuses on the previous one
-```
+| Command                              | Effect                                                       |
+|--------------------------------------|--------------------------------------------------------------|
+| `crystal --toggle [solo,fullscreen]` | Toggles crystal mode on fullscreen or solo mode                                         |
+| `crystal --navigate`                 | navigate between hidden windows                              |
+| `crystal --close`                    | closes the current window and focuses on the last hidden one |
 
 ## Uninstallation
 
