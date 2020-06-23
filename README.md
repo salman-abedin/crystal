@@ -20,7 +20,7 @@ This is the next iteration of
 -  head, tail, xargs, shift
 -  A compositor( ex. **xcompmgr, picom** etc )
 -  [xdo](https://github.com/baskerville/xdo)
--  **wmctrl**
+-  [xdotool](https://github.com/jordansissel/xdotool)
 
 ## Installation
 

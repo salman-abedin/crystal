@@ -13,8 +13,7 @@ bspc config gapless_monocle true
 #                             Script
 ###############################################################################
 
-# WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
-WORKSPACE=/tmp/crystal_ws$(wmctrl -d | grep "\*" | cut -d ' ' -f 1)
+WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
 
 solo() {
     case $1 in
@@ -29,7 +28,6 @@ solo() {
             bspc desktop -l tiled
             ;;
     esac
-    # $0 --navigate prev
     xdo id -rd | head -1 | xargs xdo activate
     bspc node -n biggest.local
 }
