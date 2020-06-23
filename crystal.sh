@@ -49,8 +49,9 @@ case $1 in
                 ;;
         esac
         if grep solo "$WORKSPACE" && xdo id -rd; then
-            xdo hide
+            # xdo hide
             xdo show "$window"
+            xdo id -rd | tail -1 | xargs xdo hide
         else
             xdo activate "$window"
         fi
