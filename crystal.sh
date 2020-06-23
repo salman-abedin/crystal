@@ -4,9 +4,6 @@
 #                             Config
 ###############################################################################
 
-# Status Bar
-[ "$STATUSBAR" ] || export STATUSBAR=polybar
-
 # BSPWM Specific settings
 top_padding=35
 bspc config borderless_monocle true
@@ -40,15 +37,15 @@ solo() {
 case $1 in
     --navigate)
         shift
-        # window=$(xdo id -rd | head -1)
+        window=$(xdo id -rd | head -1)
         case $1 in
             next)
-                window=$(xdo id -rd | tail -1)
-                # ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
+                # window=$(xdo id -rd | tail -1)
+                ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
                 ;;
             prev)
-                window=$(xdo id -rd | head -1)
-                # grep next "$WORKSPACE" && sed -i 's/next//' "$WORKSPACE" && window=$(xdo id -rd | tail -1)
+                # window=$(xdo id -rd | head -1)
+                grep next "$WORKSPACE" && sed -i 's/next//' "$WORKSPACE" && window=$(xdo id -rd | tail -1)
                 ;;
         esac
         if grep solo "$WORKSPACE" && xdo id -rd; then
