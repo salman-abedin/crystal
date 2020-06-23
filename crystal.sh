@@ -34,7 +34,6 @@ solo() {
     esac
     # $0 --navigate prev
     xdo id -rd | head -1 | xargs xdo activate
-    # bspc node -f prev.local
     bspc node -n biggest.local
 }
 
