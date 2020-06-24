@@ -30,19 +30,22 @@ git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo mak
 
 ## Usage
 
--  Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using yabar
+-  Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly.
+
+   For example, put the following in your **.profile/.xprofile** if you are using yabar
 
 ```sh
 export STATUSBAR=yabar
 ```
+
 -  Restart
 
 -  Bind these commands to your preferred key combinations
 
 | Command                              | Effect                                                       |
-|--------------------------------------|--------------------------------------------------------------|
-| `crystal --toggle [solo,fullscreen]` | Toggles crystal mode on fullscreen or solo mode                                         |
-| `crystal --navigate`                 | navigate between hidden windows                              |
+| ------------------------------------ | ------------------------------------------------------------ |
+| `crystal --toggle [solo,fullscreen]` | Toggles crystal mode on fullscreen or solo mode              |
+| `crystal --navigate`                 | navigates between hidden windows                              |
 | `crystal --close`                    | closes the current window and focuses on the last hidden one |
 
 ## Uninstallation
@@ -56,6 +59,8 @@ sudo make uninstall
 ### What if I change my status bar?
 
 Change the **STATUSBAR** environment variable and you are good to go.
+
+---
 
 ## Repos you might be interested in
 
