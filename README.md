@@ -30,10 +30,10 @@ git clone https://github.com/salman-abedin/crystal.git && cd crystal && sudo mak
 
 ## Usage
 
--  Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using polybar
+-  Get the **WM_NAME** of your status bar using **xprop** and create an environment variable named **STATUSBAR** accordingly. For example, put the following in your **.profile/.xprofile** if you are using yabar
 
 ```sh
-export STATUSBAR=polybar
+export STATUSBAR=yabar
 ```
 -  Restart
 
