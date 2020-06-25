@@ -38,22 +38,17 @@ case $1 in
         window=$(xdo id -rd | head -1)
         case $1 in
             next)
-                # xdotool search --desktop "$(xdotool get_desktop)" . windowactivate && exit
-                # window=$(xdo id -rd | tail -1)
                 ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
                 ;;
             prev)
-                # window=$(xdo id -rd | head -1)
                 grep next "$WORKSPACE" && sed -i 's/next//' "$WORKSPACE" && window=$(xdo id -rd | tail -1)
                 ;;
         esac
         if grep solo "$WORKSPACE" && xdo id -rd; then
-            # xdo hide
             xdo show "$window"
             xdo id -rd | tail -1 | xargs xdo hide
         else
             xdo activate "$window"
-            # xdotool windowactivate "$window"
         fi
         ;;
     --toggle)
