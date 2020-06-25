@@ -38,7 +38,7 @@ case $1 in
         window=$(xdo id -rd | head -1)
         case $1 in
             next)
-                xdotool search --desktop "$(xdotool get_desktop)" . windowactivate && exit
+                # xdotool search --desktop "$(xdotool get_desktop)" . windowactivate && exit
                 # window=$(xdo id -rd | tail -1)
                 ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
                 ;;
