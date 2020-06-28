@@ -15,6 +15,16 @@ bspc config gapless_monocle true
 
 WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
 
+# Forked from https://github.com/dylanaraps
+head() {
+    while read -r line; do
+        echo "$line"
+        i=$((i + 1))
+        [ "$i" = "$1" ] && return
+    done < /dev/stdin
+    [ -n "$line" ] && printf %s "$line"
+}
+
 solo() {
     case $1 in
         on)
@@ -35,7 +45,7 @@ solo() {
 case $1 in
     --navigate)
         shift
-        window=$(xdo id -rd | head -1)
+        window=$(xdo id -rd | head 1)
         case $1 in
             next)
                 ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
@@ -80,7 +90,7 @@ case $1 in
         xdo close
         if grep solo "$WORKSPACE"; then
             if xdo id -rd; then
-                xdo id -rd | head -1 | xargs xdo show
+                xdo id -rd | head 1 | xargs xdo show
             else
                 xdo show -a "$STATUSBAR"
                 bspc config top_padding $top_padding

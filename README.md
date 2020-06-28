@@ -17,7 +17,7 @@ This is the next iteration of
 
 ## Dependencies
 
--  head, tail, xargs, shift
+-  tail, xargs, shift
 -  A compositor( ex. **xcompmgr, picom** etc )
 -  [xdo](https://github.com/baskerville/xdo)
 -  [xdotool](https://github.com/jordansissel/xdotool)
@@ -45,7 +45,7 @@ export STATUSBAR=yabar
 | Command                              | Effect                                                       |
 | ------------------------------------ | ------------------------------------------------------------ |
 | `crystal --toggle [solo,fullscreen]` | Toggles crystal mode on fullscreen or solo mode              |
-| `crystal --navigate`                 | navigates between hidden windows                              |
+| `crystal --navigate`                 | navigates between hidden windows                             |
 | `crystal --close`                    | closes the current window and focuses on the last hidden one |
 
 ## Uninstallation
