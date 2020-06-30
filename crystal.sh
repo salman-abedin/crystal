@@ -15,8 +15,9 @@ bspc config gapless_monocle true
 
 WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
 
-# Forked from https://github.com/dylanaraps
-head() {
+# Head alternative
+# Forked from https://github.com/dylanaraps/pure-bash-bible#get-the-first-n-lines-of-a-file
+thead() {
     while read -r line; do
         echo "$line"
         i=$((i + 1))
@@ -38,14 +39,14 @@ solo() {
             bspc desktop -l tiled
             ;;
     esac
-    xdo id -rd | head -1 | xargs xdo activate
+    xdo id -rd | thead 1 | xargs xdo activate
     bspc node -n biggest.local
 }
 
 case $1 in
     --navigate)
         shift
-        window=$(xdo id -rd | head 1)
+        window=$(xdo id -rd | thead 1)
         case $1 in
             next)
                 ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
@@ -90,7 +91,7 @@ case $1 in
         xdo close
         if grep solo "$WORKSPACE"; then
             if xdo id -rd; then
-                xdo id -rd | head 1 | xargs xdo show
+                xdo id -rd | thead 1 | xargs xdo show
             else
                 xdo show -a "$STATUSBAR"
                 bspc config top_padding $top_padding
