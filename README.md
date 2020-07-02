@@ -1,6 +1,6 @@
 ![](demo/preview.gif)
 
-# Window manager agnostic clear transparent workflow for Unix
+# Crystal: Window manager agnostic clear transparent workflow for Unix
 
 No more ugly windows behind your beautiful transparent one
 
