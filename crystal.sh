@@ -84,9 +84,9 @@ case $1 in
                     solo on
                     bspc config top_padding 0
                 fi
+                tmux set status
                 ;;
         esac
-        tmux set status
         ;;
     --close)
         xdo close
