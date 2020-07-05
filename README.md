@@ -60,6 +60,10 @@ sudo make uninstall
 
 Change the **STATUSBAR** environment variable and you are good to go.
 
+## Patches
+
+-  **05/07/20**:- Added tmux status toggling for fullscreen mode
+
 ---
 
 ## Repos you might be interested in
