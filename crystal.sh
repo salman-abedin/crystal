@@ -86,6 +86,7 @@ case $1 in
                 fi
                 ;;
         esac
+        tmux set status
         ;;
     --close)
         xdo close
