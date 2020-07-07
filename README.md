@@ -14,6 +14,7 @@ This is the next iteration of
 -  No background windows on monocle mode
 -  Navigation between hidden windows
 -  Auto navigate to previews hidden window after closing
+-  Runs as fast as it gets! (hint: POSIX compliant shellscript)
 
 ## Dependencies
 
