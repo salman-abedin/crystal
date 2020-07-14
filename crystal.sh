@@ -1,17 +1,17 @@
 #!/usr/bin/env sh
 
-###############################################################################
+#===============================================================================
 #                             Config
-###############################################################################
+#===============================================================================
 
-# BSPWM Specific settings
+# BSPWM Specific settings (Chill & ignore if you are a non-user)
 top_padding=35
-bspc config borderless_monocle true
-bspc config gapless_monocle true
+bspc config borderless_monocle true 2> /dev/null
+bspc config gapless_monocle true 2> /dev/null
 
-###############################################################################
+#===============================================================================
 #                             Script
-###############################################################################
+#===============================================================================
 
 WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
 
@@ -22,7 +22,7 @@ thead() {
         echo "$line"
         i=$((i + 1))
         [ "$i" = "$1" ] && return
-    done < /dev/stdin
+    done
     [ -n "$line" ] && printf %s "$line"
 }
 
@@ -31,16 +31,16 @@ solo() {
         on)
             echo solo >> "$WORKSPACE"
             xdo id -rd && xdo id -rd | xargs xdo hide
-            bspc desktop -l monocle
+            bspc desktop -l monocle 2> /dev/null
             ;;
         off)
             sed -i '/solo/d' "$WORKSPACE"
             xdo id -rd && xdo id -rd | xargs xdo show
-            bspc desktop -l tiled
+            bspc desktop -l tiled 2> /dev/null
             ;;
     esac
     xdo id -rd | thead 1 | xargs xdo activate
-    bspc node -n biggest.local
+    bspc node -n biggest.local 2> /dev/null
 }
 
 case $1 in
@@ -95,7 +95,7 @@ case $1 in
                 xdo id -rd | thead 1 | xargs xdo show
             else
                 xdo show -a "$STATUSBAR"
-                bspc config top_padding $top_padding
+                bspc config top_padding $top_padding 2> /dev/null
             fi
         fi
         ;;
