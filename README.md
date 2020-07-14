@@ -82,7 +82,7 @@ Change the **STATUSBAR** environment variable and you are good to go.
 : Terminal swallowing
 
 [Uniblocks](https://github.com/salman-abedin/uniblocks)
-: The statusbar
+: The statusbar wrapper
 
 ## Contact
 
