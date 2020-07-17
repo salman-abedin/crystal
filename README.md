@@ -2,7 +2,7 @@
 
 # Crystal: Window manager agnostic clear transparent workflow for Unix
 
-No more ugly windows behind your beautiful transparent one
+Crystal helps you maintains a single transparent window all throughout multiple windows and workspaces.
 
 This is the next iteration of
 [Mono Trans BSPWM](https://github.com/salman-abedin/mono_trans_bspwm)

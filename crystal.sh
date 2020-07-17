@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
+#
+# Helps you maintains a single transparent window all throughout multiple windows and workspaces.
 
 #===============================================================================
 #                             Config
 #===============================================================================
 
 # BSPWM Specific settings (Chill & ignore if you are a non-user)
-top_padding=35
+TOPPADDING=35
 bspc config borderless_monocle true 2> /dev/null
 bspc config gapless_monocle true 2> /dev/null
 
@@ -14,17 +16,6 @@ bspc config gapless_monocle true 2> /dev/null
 #===============================================================================
 
 WORKSPACE=/tmp/crystal_ws$(xdotool get_desktop)
-
-# Head alternative
-# Forked from https://github.com/dylanaraps/pure-bash-bible#get-the-first-n-lines-of-a-file
-thead() {
-    while read -r line; do
-        echo "$line"
-        i=$((i + 1))
-        [ "$i" = "$1" ] && return
-    done
-    [ -n "$line" ] && printf %s "$line"
-}
 
 solo() {
     case $1 in
@@ -39,14 +30,14 @@ solo() {
             bspc desktop -l tiled 2> /dev/null
             ;;
     esac
-    xdo id -rd | thead 1 | xargs xdo activate
+    xdo id -rd | head -1 | xargs xdo activate
     bspc node -n biggest.local 2> /dev/null
 }
 
 case $1 in
     --navigate)
         shift
-        window=$(xdo id -rd | thead 1)
+        window=$(xdo id -rd | head -1)
         case $1 in
             next)
                 ! grep next "$WORKSPACE" && echo next >> "$WORKSPACE" && window=$(xdo id -rd | tail -1)
@@ -77,7 +68,7 @@ case $1 in
                     sed -i '/fullscreen/d' "$WORKSPACE"
                     xdo show -a "$STATUSBAR"
                     solo off
-                    bspc config top_padding $top_padding
+                    bspc config top_padding $TOPPADDING
                 else
                     echo fullscreen >> "$WORKSPACE"
                     xdo hide -a "$STATUSBAR"
@@ -92,10 +83,10 @@ case $1 in
         xdo close
         if grep solo "$WORKSPACE"; then
             if xdo id -rd; then
-                xdo id -rd | thead 1 | xargs xdo show
+                xdo id -rd | head -1 | xargs xdo show
             else
                 xdo show -a "$STATUSBAR"
-                bspc config top_padding $top_padding 2> /dev/null
+                bspc config top_padding $TOPPADDING 2> /dev/null
             fi
         fi
         ;;
