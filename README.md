@@ -18,7 +18,7 @@ This is the next iteration of
 
 ## Dependencies
 
--  tail, xargs, shift
+-  tail, xargs
 -  A compositor( ex. **xcompmgr, picom** etc )
 -  [xdo](https://github.com/baskerville/xdo)
 -  [xdotool](https://github.com/jordansissel/xdotool)
@@ -46,7 +46,7 @@ export STATUSBAR=yabar
 | Command                              | Effect                                                       |
 | ------------------------------------ | ------------------------------------------------------------ |
 | `crystal --toggle [solo,fullscreen]` | Toggles crystal mode on fullscreen or solo mode              |
-| `crystal --navigate`                 | navigates between hidden windows                             |
+| `crystal --navigate [next, prev]`    | navigates between hidden windows                             |
 | `crystal --close`                    | closes the current window and focuses on the last hidden one |
 
 ## Uninstallation
@@ -72,6 +72,12 @@ Change the **STATUSBAR** environment variable and you are good to go.
 [Bolt](https://github.com/salman-abedin/bolt)
 : The lightning fast workflow creator
 
+[Uniblocks](https://github.com/salman-abedin/uniblocks)
+: The statusbar wrapper
+
+[puri](https://github.com/salman-abedin/puri)
+: Minimal URL launcher
+
 [Magpie](https://github.com/salman-abedin/magpie)
 : The dotfiles
 
@@ -80,9 +86,6 @@ Change the **STATUSBAR** environment variable and you are good to go.
 
 [Devour](https://github.com/salman-abedin/devour)
 : Terminal swallowing
-
-[Uniblocks](https://github.com/salman-abedin/uniblocks)
-: The statusbar wrapper
 
 ## Contact
 

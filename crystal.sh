@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+    #!/usr/bin/env sh
 #
 # Helps you maintains a single transparent window all throughout multiple windows and workspaces.
 
